@@ -12,5 +12,11 @@ import { CartService } from '../cart.service';
 export class ProductDetailsComponent implements OnInit {
   constructor(private cart: CartService, private route: ActivatedRoute) {}
 
+  product: Product = { id: 1, name: '', price: 1, description: '' };
+  addToCart(product: Product) {
+    this.cart.addToCart(product);
+    alert('Your product has been added to the cart!');
+  }
+
   ngOnInit(): void {}
 }
